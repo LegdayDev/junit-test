@@ -17,6 +17,7 @@ public class MyBatisConfig {
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
 
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+
 		org.apache.ibatis.session.Configuration config = new org.apache.ibatis.session.Configuration();
 		config.setMapUnderscoreToCamelCase(true);
 		sessionFactory.setConfiguration(config);
@@ -31,4 +32,3 @@ public class MyBatisConfig {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 }
-
