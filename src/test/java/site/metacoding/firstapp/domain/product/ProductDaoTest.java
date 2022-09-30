@@ -14,18 +14,19 @@ import site.metacoding.firstapp.config.MyBatisConfig;
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) // 실DB사용
 @MybatisTest
 public class ProductDaoTest {
+
     @Autowired
     private ProductDao productDao;
 
-    // findById부터 테스트
     @Test
     public void findById_test() {
-
-        // given : 가상으로 매개변수로 받을 것.
+        // given (받아야 될 것)
         Integer productId = 1;
-        // when : 테스트
+
+        // when (테스트)
         Product productPS = productDao.findById(productId);
-        // then : 검증
+
+        // then (검증)
         assertEquals("바나나", productPS.getProductName());
     }
 }
